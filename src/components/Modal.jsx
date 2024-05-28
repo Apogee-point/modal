@@ -10,12 +10,12 @@ import { LuSendHorizonal } from "react-icons/lu";
 const Modal = ({open,onClose}) => {
   if (!open) return null
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center p-3 border border-gray-500 rounded-lg">
-      <div className="bg-white flex flex-col w-96 rounded-lg py-6 px-8">
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white flex flex-col w-96 py-6 px-8 border border-gray-500 rounded-xl">
         <div className="flex items-center justify-between">
-          <IoCheckmarkDoneCircleOutline className="text-xl text-red-500" />
+          <IoCheckmarkDoneCircleOutline className="text-xl text-red-500 cursor-pointer" onClick={()=>alert("Saved..")} />
           <div className="flex space-x-2 items-center">
-            <RiDeleteBin5Line className="text-xl text-red-500 cursor-pointer" />
+            <RiDeleteBin5Line className="text-xl text-red-500 cursor-pointer" onClick={()=>alert("Deleting...")} />
             <IoIosClose onClick={onClose} className="text-3xl text-red-500 cursor-pointer" />
           </div>
         </div>
@@ -25,7 +25,7 @@ const Modal = ({open,onClose}) => {
         </div>
 
         <div className="border rounded-3xl border-gray-400 p-2 mt-3 w-90">
-          <div className="flex items-center ml-10">
+          <div className="flex items-center justify-center">
             <FaRegCalendar className="text-gray-400"/>
             <h1 className="text-sm font-semibold p-1">Dec 5, 2024 at 8:00-10:00 AM </h1>
           </div>
@@ -34,7 +34,7 @@ const Modal = ({open,onClose}) => {
           <div className="flex flex-col space-y-5 mt-5">
             <div className="flex items-center gap-2">
               <IoPersonOutline className="text-red-500 text-xl" />
-              <div id="assign_to" className="text-gray-500 italic">Assign to : </div>
+              <div id="assign_to" className="text-gray-500 italic whitespace-nowrap">Assign to : </div>
               <div className="flex items-center gap-1 border border-gray-300 rounded-3xl w-7/12">
                 <div className="flex items-center mr-1 pl-3 py-1">
                   <img src={profilePic} alt="profile" className="rounded-full w-8 h-8 max-w-none"/>
@@ -48,8 +48,8 @@ const Modal = ({open,onClose}) => {
             </div>
             <div className="flex items-center gap-3">
               <CiStickyNote className="text-red-500 text-xl" />
-              <div id="note" className="text-gray-500 italic">Note : </div>
-              <textarea className="border border-gray-300 rounded-lg p-1 h-14 w-8/12 outline-none text-gray-500 font-thin">
+              <div id="note" className="text-gray-500 italic whitespace-nowrap">Note : </div>
+              <textarea className="border border-gray-300 rounded-lg p-1 w-8/12 outline-none text-gray-500 font-thin resize-none">
               </textarea>
             </div>
           </div>
@@ -82,8 +82,8 @@ const Modal = ({open,onClose}) => {
               <img src={profilePic} alt="profile" className="rounded-full w-8 h-8 max-w-none"/>
             </div>
             <div className="flex items-center border border-gray-300 rounded-3xl p-2 w-full">
-              <input type="text" placeholder="Write comment ..." className="text-sm outline-none ml-2 w-5/6"/>
-              <LuSendHorizonal className="text-red-500 text-xl cursor-pointer"/>
+              <input type="text" placeholder="Write comment ..." className="text-sm outline-none mx-2 w-5/6"/>
+              <LuSendHorizonal className="text-red-500 text-lg cursor-pointer"/>
             </div>
           </div>
       </div>
