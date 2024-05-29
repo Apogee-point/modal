@@ -20,7 +20,7 @@ const CommentList = ({
         <div className="flex flex-col items-start p-1">
           <h3 className="text-sm font-semibold text-cgreen">Jane Doe</h3>
           <div className="text-xsm text-gray-700 font-light text-left leading-tight">
-            {"I'll be working on the design and will send it to you for approval."}
+            {"I'll be working on the design. (Sample comment without edit and delete option)"}
           </div>
         </div>
       </div>

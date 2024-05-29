@@ -8,6 +8,20 @@ import CommentList from './CommentList';
 import CommentInput from './CommentInput';
 
 const Modal = ({ open, onClose }) => {
+  const months = {
+    1: 'Jan',
+    2: 'Feb',
+    3: 'Mar',
+    4: 'Apr',
+    5: 'May',
+    6: 'Jun',
+    7: 'Jul',
+    8: 'Aug',
+    9: 'Sep',
+    10: 'Oct',
+    11: 'Nov',
+    12: 'Dec',
+  }
   const [title, setTitle] = useState('');
   const [editingDate, setEditingDate] = useState(true);
   const [date, setDate] = useState(new Date().toLocaleDateString());
@@ -16,7 +30,7 @@ const Modal = ({ open, onClose }) => {
   const [assignTo, setAssignTo] = useState('');
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([
-    { name: 'Jane Doe', comment: 'I\'ll be working on the design and will send it to you for approval.' },
+    { name: 'Jane Doe', comment: 'I\'ll be working .(Sample comment without edit and delete option)' },
   ]);
   const [editedComment, setEditedComment] = useState('');
   const [editingCommentDetails, setEditingCommentDetails] = useState({});
@@ -46,6 +60,19 @@ const Modal = ({ open, onClose }) => {
     setEditedComment(e.target.value);
   };
 
+  const convertDate = (date) => { 
+    const d = new Date(date);
+    return `${d.getDate()} ${months[d.getMonth() + 1]}, ${d.getFullYear()}`;
+  };
+
+  const convertTime = (time) => {
+    // time is in localeTimeString format
+    const t = time.split(':');
+    const hour = t[0] > 12 ? t[0] - 12 : t[0];
+    const min = t[1];
+    return `${hour}:${min} ${t[0] > 12 ? 'PM' : 'AM'}`;
+  };
+
   if (!open) return null;
 
   return (
@@ -62,6 +89,8 @@ const Modal = ({ open, onClose }) => {
           setFromTime={setFromTime}
           toTime={toTime}
           setToTime={setToTime}
+          convertDate={convertDate}
+          convertTime={convertTime}
         />
         <AssignedPersonInput assignTo={assignTo} setAssignTo={setAssignTo} />
         <NoteInput />

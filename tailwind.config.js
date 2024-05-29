@@ -16,6 +16,7 @@ export default {
         'serif': ['Merriweather', 'serif'],
         'mono': ['Inconsolata', 'monospace'],
         'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
       },
       colors:{
         'cgreen':'#039379'

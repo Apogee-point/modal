@@ -13,13 +13,15 @@ const AssignedPersonInput = ({ assignTo, setAssignTo }) => {
           <img src={profilePic} alt="profile" className="rounded-full w-8 h-8 max-w-none" />
         </div>
         <select
-          className=" bg-white text-cgreen text-sm font-bold outline-none w-full"
-          onChange={(e) => setAssignTo(e.target.value)}
+          className=" bg-white text-cgreen text-sm font-bold outline-none w-full cursor-pointer"
+          onChange={(e) => {
+            setAssignTo(e.target.value);
+          }}
           value={assignTo}
         >
-          <option className="text-green-500 p-2">John Doe</option>
-          <option className="text-green-500">Jane Doe</option>
-          <option className="text-green-500">James Doe</option>
+          <option className="text-green-500 p-2">Jane Smith</option>
+          <option className="text-green-500">Will Smith</option>
+          <option className="text-green-500">Randy</option>
         </select>
       </div>
     </div>

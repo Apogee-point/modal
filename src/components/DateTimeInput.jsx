@@ -10,6 +10,8 @@ const DateTimeInput = ({
   setFromTime,
   toTime,
   setToTime,
+  convertDate,
+  convertTime,
 }) => {
   return (
     <div className="border rounded-3xl border-gray-400 p-2 mt-3 w-90">
@@ -17,7 +19,7 @@ const DateTimeInput = ({
         <div className="flex items-center gap-2">
           <input
             type="date"
-            value={date}
+            value={convertDate(date)}
             onChange={(e) => {
               setDate(e.target.value);
             }}
@@ -46,8 +48,8 @@ const DateTimeInput = ({
       ) : (
         <div className="flex items-center gap-2 justify-center">
           <FaRegCalendar className="text-gray-500 text-xl" />
-          <h1 className="text-sm font-semibold p-1 cursor-pointer" onClick={() => setEditingDate(true)}>
-            {new Date(date).toLocaleDateString()} at {fromTime} to {toTime}
+          <h1 className="text-sm font-semibold p-1 cursor-pointer font-roboto" onClick={() => setEditingDate(true)}>
+            {convertDate(new Date(date).toLocaleDateString())} at {convertTime(fromTime)}-{convertTime(toTime)}
           </h1>
         </div>
       )}

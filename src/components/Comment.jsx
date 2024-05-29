@@ -24,7 +24,7 @@ const Comment = ({
             <textarea
               value={editedComment}
               onChange={handleInputChange}
-              className="text-xsm text-gray-700 font-light text-left leading-tight p-1 outline-none  min-w-0 w-full"
+              className="text-xsm text-gray-700 font-light text-left leading-tight p-1 outline-none  min-w-0 w-56 resize-none"
               autoFocus
             />
             <MdDone
