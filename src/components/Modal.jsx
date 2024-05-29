@@ -30,7 +30,7 @@ const Modal = ({ open, onClose }) => {
   const [assignTo, setAssignTo] = useState('');
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([
-    { name: 'Jane Doe', comment: 'I\'ll be working .(Sample comment without edit and delete option)' },
+    { name: 'Jane Doe', comment: 'Nice job' },
   ]);
   const [editedComment, setEditedComment] = useState('');
   const [editingCommentDetails, setEditingCommentDetails] = useState({});
